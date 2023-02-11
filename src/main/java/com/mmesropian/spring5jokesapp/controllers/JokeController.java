@@ -11,14 +11,14 @@ public class JokeController {
 
     private final JokeService jokeService;
 
-    @Autowired
     public JokeController(JokeService jokeService) {
         this.jokeService = jokeService;
     }
-    @RequestMapping({"/", ""})
-    public String showJoke(Model model){
 
-        model.addAttribute("Joke", jokeService.getJoke());
+    @RequestMapping({"/", ""})
+    public String showJoke(Model model) {
+
+        model.addAttribute("joke", jokeService.getJoke());
         return "index";
     }
 
